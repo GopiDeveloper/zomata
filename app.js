@@ -54,7 +54,7 @@ app.get('/reastaurants/:id',(req, res) => {
 app.get('/reastaurants',(req,res) =>{
     var query = {};
     console.log(req.query.city)
-    db.collection('reastaurants').find().toArray((err,result) =>{
+    db.collection('reastaurant').find().toArray((err,result) =>{
         if(err) throw err;
         res.send(result)
     })
