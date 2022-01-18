@@ -9,6 +9,7 @@ var mongoUrl = 'mongodb+srv://143gopi_247:P.Gopi143@cluster0.vss3u.mongodb.net/a
 var cors = require('cors');
 const bodyParser = require('body-parser')
 var port = process.env.PORT || 1234;
+app.use(cors())
 //save the database connection
 var db;
 
