@@ -40,6 +40,13 @@ app.get('/reastaurants',(req, res) => {
     })
 })
 
+app.get('/menu',(req, res) => {
+    db.collection('menu').find().toArray((err,result)=> {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
 app.get('/reastaurants/:id',(req, res) => {
     var id =  parseInt(req.params.id);
     db.collection('reastaurant').find({"restaurant_id":id}).toArray((err,result) =>{
