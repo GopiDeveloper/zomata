@@ -45,7 +45,7 @@ app.get('/reastaurants',(req, res) => {
 app.get('/menu',(req, res) => {
     db.collection('menu').find().toArray((err,result)=> {
         if(err) throw err;
-        res.send(result)
+        res.send(result)  
     })
 })
 
