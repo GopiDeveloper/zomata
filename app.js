@@ -7,6 +7,12 @@ var MongoClient = mongo.MongoClient;
 dotenv.config();
 var mongoUrl = 'mongodb+srv://143gopi_247:P.Gopi143@cluster0.vss3u.mongodb.net/augintern?retryWrites=true&w=majority';
 var cors = require('cors');
+
+app.use(
+     cors({
+         origin:"*"
+     })
+)
 const bodyParser = require('body-parser')
 var port = process.env.PORT || 1234;
 
