@@ -1,12 +1,15 @@
 var express = require('express');
-var app = express();
+
 var dotenv = require('dotenv');
 var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;
+var cors = require('cors');
+var app = express();
+app.use(cors())
 
 dotenv.config();
 var mongoUrl = 'mongodb+srv://143gopi_247:P.Gopi143@cluster0.vss3u.mongodb.net/augintern?retryWrites=true&w=majority';
-var cors = require('cors');
+
 
 const bodyParser = require('body-parser')
 var port = process.env.PORT || 1234;
@@ -16,6 +19,8 @@ var db;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+
 
 app.get('/',(req, res) => {
     res.send("hii from the from express")
